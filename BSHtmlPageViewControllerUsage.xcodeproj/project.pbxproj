@@ -19,6 +19,10 @@
 		43D5C6A71938713700BEC1D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D5C68F1938713700BEC1D4 /* UIKit.framework */; };
 		43D5C6AF1938713700BEC1D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C6AD1938713700BEC1D4 /* InfoPlist.strings */; };
 		43D5C6B11938713700BEC1D4 /* BSHtmlPageViewControllerUsageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D5C6B01938713700BEC1D4 /* BSHtmlPageViewControllerUsageTests.m */; };
+		43D5C6BD1938727600BEC1D4 /* BSHtmlPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D5C6BC1938727600BEC1D4 /* BSHtmlPageViewController.m */; };
+		43D5C6C019387B8900BEC1D4 /* BSHtmlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D5C6BF19387B8900BEC1D4 /* BSHtmlViewController.m */; };
+		43D5C6C319389A3E00BEC1D4 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D5C6C219389A3E00BEC1D4 /* TestViewController.m */; };
+		43D5C6C81938C2C000BEC1D4 /* HtmlContent.txt in Resources */ = {isa = PBXBuildFile; fileRef = 43D5C6C71938C2C000BEC1D4 /* HtmlContent.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,13 @@
 		43D5C6AC1938713700BEC1D4 /* BSHtmlPageViewControllerUsageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BSHtmlPageViewControllerUsageTests-Info.plist"; sourceTree = "<group>"; };
 		43D5C6AE1938713700BEC1D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43D5C6B01938713700BEC1D4 /* BSHtmlPageViewControllerUsageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSHtmlPageViewControllerUsageTests.m; sourceTree = "<group>"; };
+		43D5C6BB1938727600BEC1D4 /* BSHtmlPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHtmlPageViewController.h; sourceTree = "<group>"; };
+		43D5C6BC1938727600BEC1D4 /* BSHtmlPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHtmlPageViewController.m; sourceTree = "<group>"; };
+		43D5C6BE19387B8900BEC1D4 /* BSHtmlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHtmlViewController.h; sourceTree = "<group>"; };
+		43D5C6BF19387B8900BEC1D4 /* BSHtmlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHtmlViewController.m; sourceTree = "<group>"; };
+		43D5C6C119389A3E00BEC1D4 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		43D5C6C219389A3E00BEC1D4 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		43D5C6C71938C2C000BEC1D4 /* HtmlContent.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HtmlContent.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +88,7 @@
 		43D5C67F1938713700BEC1D4 = {
 			isa = PBXGroup;
 			children = (
+				43D5C6BA1938717900BEC1D4 /* BSHtmlPageViewController */,
 				43D5C6911938713700BEC1D4 /* BSHtmlPageViewControllerUsage */,
 				43D5C6AA1938713700BEC1D4 /* BSHtmlPageViewControllerUsageTests */,
 				43D5C68A1938713700BEC1D4 /* Frameworks */,
@@ -111,6 +123,9 @@
 				43D5C69B1938713700BEC1D4 /* AppDelegate.m */,
 				43D5C69D1938713700BEC1D4 /* Images.xcassets */,
 				43D5C6921938713700BEC1D4 /* Supporting Files */,
+				43D5C6C119389A3E00BEC1D4 /* TestViewController.h */,
+				43D5C6C219389A3E00BEC1D4 /* TestViewController.m */,
+				43D5C6C71938C2C000BEC1D4 /* HtmlContent.txt */,
 			);
 			path = BSHtmlPageViewControllerUsage;
 			sourceTree = "<group>";
@@ -142,6 +157,17 @@
 				43D5C6AD1938713700BEC1D4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43D5C6BA1938717900BEC1D4 /* BSHtmlPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				43D5C6BE19387B8900BEC1D4 /* BSHtmlViewController.h */,
+				43D5C6BF19387B8900BEC1D4 /* BSHtmlViewController.m */,
+				43D5C6BB1938727600BEC1D4 /* BSHtmlPageViewController.h */,
+				43D5C6BC1938727600BEC1D4 /* BSHtmlPageViewController.m */,
+			);
+			path = BSHtmlPageViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +247,7 @@
 			files = (
 				43D5C6961938713700BEC1D4 /* InfoPlist.strings in Resources */,
 				43D5C69E1938713700BEC1D4 /* Images.xcassets in Resources */,
+				43D5C6C81938C2C000BEC1D4 /* HtmlContent.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +268,9 @@
 			files = (
 				43D5C69C1938713700BEC1D4 /* AppDelegate.m in Sources */,
 				43D5C6981938713700BEC1D4 /* main.m in Sources */,
+				43D5C6C019387B8900BEC1D4 /* BSHtmlViewController.m in Sources */,
+				43D5C6BD1938727600BEC1D4 /* BSHtmlPageViewController.m in Sources */,
+				43D5C6C319389A3E00BEC1D4 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +392,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BSHtmlPageViewControllerUsage/BSHtmlPageViewControllerUsage-Prefix.pch";
 				INFOPLIST_FILE = "BSHtmlPageViewControllerUsage/BSHtmlPageViewControllerUsage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -375,6 +406,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BSHtmlPageViewControllerUsage/BSHtmlPageViewControllerUsage-Prefix.pch";
 				INFOPLIST_FILE = "BSHtmlPageViewControllerUsage/BSHtmlPageViewControllerUsage-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
