@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name             	= "BSHtmlPageViewController"
   s.version          	= "0.0.1"
   s.summary          	= "HTML page viewer is based on UIPageViewController with UIWebView, Toolbar and UIPageControl."
-  s.description      	= "HTML page viewer is based on UIPageViewController with UIWebView, Toolbar and UIPageControl."
+  s.description      	= "HTML page viewer is based on UIPageViewController with UIWebView, Toolbar and UIPageControl. Toolbar and UIPageControl instances are available as readonly properties."
   s.homepage         	= "https://github.com/Bogdan-Stasjuk/BSHtmlPageViewController"
   s.license      		= { :type => 'MIT', :file => 'LICENSE' }
   s.author           	= { "Bogdan Stasjuk" => "Bogdan.Stasjuk@gmail.com" }
