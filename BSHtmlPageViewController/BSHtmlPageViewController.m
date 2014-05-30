@@ -1,9 +1,7 @@
 //
-//  NMNemoViewController.m
-//  Nemo
+//  BSHtmlPageViewController.m
 //
 //  Created by Bogdan Stasjuk on 10/28/13.
-//  Copyright (c) 2013 BestApp Studio. All rights reserved.
 //
 
 #import "BSHtmlPageViewController.h"
