@@ -38,8 +38,9 @@
         self.webView = [[UIWebView alloc] initWithFrame:self.view.frame];
         self.webView.scalesPageToFit = YES;
         self.webView.delegate = self;
+        self.webView.dataDetectorTypes = UIDataDetectorTypeNone;
         self.view = self.webView;
-
+        
         if (link) {
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:link]]];
         } else {
