@@ -30,7 +30,7 @@
 {
     [super viewDidAppear:animated];
     
-    BSHtmlPageViewController *htmlPageViewController = [[BSHtmlPageViewController alloc] initWithDataSource:self];
+    BSHtmlPageViewController *htmlPageViewController = [[BSHtmlPageViewController alloc] initWithDataSource:self andStartPageNum:1];
     htmlPageViewController.modalPresentationStyle = UIModalPresentationFullScreen;
     
     UIBarButtonItem *mailButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(buttonMailPressed)];

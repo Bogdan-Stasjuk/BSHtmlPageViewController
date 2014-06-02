@@ -45,7 +45,7 @@ const Byte PageControllBottomShift = 10.f;
 
 #pragma Public methods
 
-- (id)initWithDataSource:(id)dataSource
+- (id)initWithDataSource:(id)dataSource andStartPageNum:(Byte)startPage
 {
     self = [super init];
     if (self) {
@@ -53,9 +53,9 @@ const Byte PageControllBottomShift = 10.f;
         self.webViewLoadSource = [self.dataSource respondsToSelector:@selector(htmlLinkForPage:)] ? WebViewLoadSourceLink :
         ([self.dataSource respondsToSelector:@selector(htmlContentForPage:)] ? WebViewLoadSourceContent : WebViewLoadSourceNone);
         
-        [self setupPageViewController];
+        [self setupPageViewControllerWithStartPage:startPage];
         [self addToolBar];
-        [self setupPageControl];
+        [self setupPageControlWithStartPage:startPage];
     }
     return self;
 }
@@ -127,14 +127,14 @@ const Byte PageControllBottomShift = 10.f;
 
 #pragma mark - Private methods
 
-- (void)setupPageViewController
+- (void)setupPageViewControllerWithStartPage:(Byte)startPage
 {
     if (self.webViewLoadSource == WebViewLoadSourceNone) {
         return;
     }
     BSHtmlViewController *htmlViewController = (self.webViewLoadSource == WebViewLoadSourceLink) ?
-                                                [[BSHtmlViewController alloc] initWithLink:[self.dataSource htmlLinkForPage:0] andIndex:0] :
-                                                [[BSHtmlViewController alloc] initWithContent:[self.dataSource htmlContentForPage:0] andIndex:0];
+                                                [[BSHtmlViewController alloc] initWithLink:[self.dataSource htmlLinkForPage:startPage] andIndex:startPage] :
+                                                [[BSHtmlViewController alloc] initWithContent:[self.dataSource htmlContentForPage:startPage] andIndex:startPage];
     
     UIPageViewController *pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
                                                                                navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
@@ -154,7 +154,7 @@ const Byte PageControllBottomShift = 10.f;
     [self.view addSubview:pageViewController.view];
 }
 
-- (void)setupPageControl
+- (void)setupPageControlWithStartPage:(Byte)startPage
 {
     CGFloat pageControlTop = ((self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
                               self.interfaceOrientation == UIInterfaceOrientationLandscapeRight) ?
@@ -166,6 +166,7 @@ const Byte PageControllBottomShift = 10.f;
     self.pageControl.numberOfPages = ([self.dataSource respondsToSelector:@selector(numberOfHtmlPages)]) ? [self.dataSource numberOfHtmlPages] : 0;
     self.pageControl.pageIndicatorTintColor = [UIColor grayColor];
     self.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    self.pageControl.currentPage = startPage;
     [self.view addSubview:self.pageControl];
 }
 

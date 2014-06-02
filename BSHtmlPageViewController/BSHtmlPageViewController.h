@@ -9,7 +9,7 @@
 @property(nonatomic, strong, readonly) UIToolbar          *toolbar;
 @property(nonatomic, strong, readonly) UIPageControl      *pageControl;
 
-- (id)initWithDataSource:(id)dataSource;
+- (id)initWithDataSource:(id)dataSource andStartPageNum:(Byte)startPage;
 
 #pragma mark - Unavailable methods
 
