@@ -7,9 +7,10 @@
 #import "BSHtmlViewController.h"
 
 
-@interface BSHtmlViewController ()
+@interface BSHtmlViewController () <UIWebViewDelegate>
 
-@property(nonatomic, assign) NSUInteger index;
+@property(assign, nonatomic) NSUInteger index;
+@property(strong, nonatomic) UIWebView  *webView;
 
 @end
 
@@ -34,14 +35,15 @@
         
         self.index = index;
 
-        UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.frame];
-        webView.scalesPageToFit = YES;
-        self.view = webView;
+        self.webView = [[UIWebView alloc] initWithFrame:self.view.frame];
+        self.webView.scalesPageToFit = YES;
+        self.webView.delegate = self;
+        self.view = self.webView;
 
         if (link) {
-            [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:link]]];
+            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:link]]];
         } else {
-            [webView loadHTMLString:content baseURL:nil];
+            [self.webView loadHTMLString:content baseURL:nil];
         }
     }
     return self;
@@ -49,6 +51,13 @@
 
 
 #pragma mark - Private methods
+
+#pragma mark -UIWebViewDelegate
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self zoomToFit];
+}
 
 #pragma mark -UIViewCotroller
 
@@ -58,11 +67,29 @@
     
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self zoomToFit];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     
     NSLog(@"didReceiveMemoryWarning");
+}
+
+#pragma mark -Other
+
+-(void)zoomToFit
+{
+    if ([self.webView respondsToSelector:@selector(scrollView)])
+    {
+        UIScrollView *scroll = [self.webView scrollView];
+        float zoom = self.webView.bounds.size.width / scroll.contentSize.width;
+        NSString *jsCommand = [NSString stringWithFormat:@"document.body.style.zoom = %f;", zoom];
+        [self.webView stringByEvaluatingJavaScriptFromString:jsCommand];
+    }
 }
 
 @end
