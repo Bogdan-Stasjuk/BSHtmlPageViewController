@@ -45,8 +45,7 @@ const Byte PageControllBottomShift = 10.f;
 
 #pragma Public methods
 
-- (id)initWithDataSource:(id)dataSource andStartPageNum:(Byte)startPage
-{
+- (id)initWithDataSource:(id)dataSource andStartPageNum:(Byte)startPage {
     self = [super init];
     if (self) {
         self.dataSource = dataSource;
@@ -172,15 +171,16 @@ const Byte PageControllBottomShift = 10.f;
 
 #pragma mark -Actions
 
-- (void)doneButtonPressed
-{
+- (void)doneButtonPressed {
+    if ([self.pageDelegate respondsToSelector:@selector(viewWillClose)]) {
+        [self.pageDelegate viewWillClose];
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark -Other
 
-- (void)addToolBar
-{
+- (void)addToolBar {
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed)];
     UIBarButtonItem *flexibleSpaceButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 
