@@ -49,7 +49,7 @@ This class has been tested back to iOS 6.0.
 Installation
 ============
 
-__Cocoapods__: `pod 'BSHtmlPageViewController'`<br />
+__CocoaPods__: `pod 'BSHtmlPageViewController'`<br />
 __Manual__: Copy the __BSHtmlPageViewController__ folder in your project and import header:
 
     #import "BSHtmlPageViewController.h"
